@@ -11,27 +11,33 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class BaseActivity extends AppCompatActivity {
 
-    private DocumentReference documentReference;
+    protected DocumentReference documentReference;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
-                .document(preferenceManager.getString(Constants.KEY_USER_ID));
+        String userId = preferenceManager.getString(Constants.KEY_USER_ID);
+        if (userId != null) {
+            FirebaseFirestore database = FirebaseFirestore.getInstance();
+            documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
+                    .document(userId);
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        documentReference.update(Constants.KEY_AVAILABILITY,0);
+        if (documentReference != null) {
+            documentReference.update(Constants.KEY_AVAILABILITY, 0);
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        documentReference.update(Constants.KEY_AVAILABILITY,1);
+        if (documentReference != null) {
+            documentReference.update(Constants.KEY_AVAILABILITY, 1);
+        }
     }
-
 }

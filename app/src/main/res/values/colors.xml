@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <color name="primary">#660094</color>
-    <color name="primary_dark">	#310047</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#757575</color>
+    <color name="primary">#6C22A6</color>
+    <color name="primary_dark">#3D0A6D</color>
+    <color name="primary_light">#9C4EDF</color>
+    <color name="primary_text">#1C1B1F</color>
+    <color name="secondary_text">#6B7280</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="input_background">#ececec</color>
+    <color name="input_background">#F3F4F6</color>
     <color name="icon_background">#20ffffff</color>
-    <color name="error">#b00020</color>
-    <color name="received_message_background">#090D16</color>
-    <color name="off_white">#FDFDFD</color>
-    <color name="light_gray">#c3c3c3</color>
-    <color name="green">#008000</color>
+    <color name="error">#DC2626</color>
+    <color name="sent_message_background">#6C22A6</color>
+    <color name="received_message_background">#F3F4F6</color>
+    <color name="received_message_text">#1C1B1F</color>
+    <color name="off_white">#F9FAFB</color>
+    <color name="light_gray">#D1D5DB</color>
+    <color name="green">#10B981</color>
+    <color name="surface_color">#FFFFFF</color>
+    <color name="divider_color">#E5E7EB</color>
+    <color name="gradient_start">#6C22A6</color>
+    <color name="gradient_end">#3D0A6D</color>
+    <color name="input_border">#D1D5DB</color>
+    <color name="chat_bg">#F0F2F5</color>
+    <color name="status_bar_color">#3D0A6D</color>
+    <color name="navigation_bar_color">#FFFFFF</color>
+    <color name="shadow_color">#1A000000</color>
 </resources>

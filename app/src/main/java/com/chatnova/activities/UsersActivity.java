@@ -31,11 +31,11 @@ public class UsersActivity extends BaseActivity implements UserListener {
         getUsers();
     }
 
-    private void setListeners(){
+    private void setListeners() {
         binding.imageBack.setOnClickListener(v -> onBackPressed());
     }
 
-    private void getUsers(){
+    private void getUsers() {
         loading(true);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection(Constants.KEY_COLLECTION_USERS)
@@ -43,10 +43,10 @@ public class UsersActivity extends BaseActivity implements UserListener {
                 .addOnCompleteListener(task -> {
                     loading(false);
                     String currentUserId = preferenceManager.getString(Constants.KEY_USER_ID);
-                    if(task.isSuccessful() && task.getResult() != null){
+                    if (task.isSuccessful() && task.getResult() != null) {
                         List<User> users = new ArrayList<>();
                         for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
-                            if(currentUserId.equals(queryDocumentSnapshot.getId())) {
+                            if (currentUserId != null && currentUserId.equals(queryDocumentSnapshot.getId())) {
                                 continue;
                             }
                             User user = new User();
@@ -57,12 +57,11 @@ public class UsersActivity extends BaseActivity implements UserListener {
                             user.id = queryDocumentSnapshot.getId();
                             users.add(user);
                         }
-                        if (users.size() > 0){
-                            UsersAdapter usersAdapter = new UsersAdapter(users,this);
+                        if (users.size() > 0) {
+                            UsersAdapter usersAdapter = new UsersAdapter(users, this);
                             binding.usersRecyclerView.setAdapter(usersAdapter);
                             binding.usersRecyclerView.setVisibility(View.VISIBLE);
-                        }
-                        else {
+                        } else {
                             showErrorMessage();
                         }
                     } else {
@@ -71,26 +70,24 @@ public class UsersActivity extends BaseActivity implements UserListener {
                 });
     }
 
-    private void showErrorMessage(){
-        binding.textErrorMessage.setText(String.format("%s","No user avaliable"));
+    private void showErrorMessage() {
+        binding.textErrorMessage.setText("No users available");
         binding.textErrorMessage.setVisibility(View.VISIBLE);
     }
 
-    private void loading(Boolean isLoading){
+    private void loading(Boolean isLoading) {
         if (isLoading) {
             binding.ProgressBar.setVisibility(View.VISIBLE);
-        }
-        else {
+        } else {
             binding.ProgressBar.setVisibility(View.INVISIBLE);
         }
     }
 
     @Override
     public void onUserClicked(User user) {
-        Intent intent = new Intent(getApplicationContext(),ChatActivity.class);
-        intent.putExtra(Constants.KEY_USER,user);
+        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+        intent.putExtra(Constants.KEY_USER, user);
         startActivity(intent);
         finish();
     }
-
 }
