@@ -1,37 +1,26 @@
 {
   "project_info": {
-    "project_number": "193056854477",
-    "firebase_url": "https://mapmate-4559d-default-rtdb.firebaseio.com",
-    "project_id": "mapmate-4559d",
-    "storage_bucket": "mapmate-4559d.appspot.com"
+    "project_number": "455301533474",
+    "project_id": "chatnova-49b74",
+    "storage_bucket": "chatnova-49b74.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:193056854477:android:c27e5306f943bfbb793484",
+        "mobilesdk_app_id": "1:455301533474:android:2f41d64f3ececd7e0e1f7b",
         "android_client_info": {
-          "package_name": "com.example.universitymap"
+          "package_name": "com.chatnova"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "193056854477-8qhr1tvg724drit07sk05l0dqkuskuib.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB57BxcDEEifqDX8bOPhEwiDNR5Q0m4Md0"
+          "current_key": "AIzaSyDunsN08ECyGiJU5A_wIIsk-4iSDlJky5Y"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "193056854477-8qhr1tvg724drit07sk05l0dqkuskuib.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

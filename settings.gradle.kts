@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "UniversityMap"
+rootProject.name = "ChatNova"
 include(":app")
  

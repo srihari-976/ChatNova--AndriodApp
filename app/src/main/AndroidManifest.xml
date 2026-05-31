@@ -1,53 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.chatnova">
 
-<!-- Permissions -->
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
 
-<application
-    android:allowBackup="true"
-    android:dataExtractionRules="@xml/data_extraction_rules"
-    android:fullBackupContent="@xml/backup_rules"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/Theme.UniversityMap"
-    tools:targetApi="31">
+    <queries>
+        <package android:name="com.google.android.gms" />
+        <package android:name="com.google.android.gsf" />
+        <package android:name="com.google.android.vending" />
+    </queries>
 
-    <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyCwbpkfvrtAttGvsI_PPSXgJqM_vNtAWd0" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
 
-    <!-- SplashScreen Activity -->
-    <activity
-        android:name=".SplashScreen"
-        android:exported="true">
-        <intent-filter>
-            <!-- Set SplashScreen as the launch activity -->
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="false"
+        android:icon="@drawable/chatnova_1"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/chatnova_1"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ChatNova">
 
-    <!-- LoginPage Activity -->
-    <activity
-        android:name=".LoginPage"
-        android:exported="true" />
+        <activity
+            android:name=".activities.SignInActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-    <!-- SigninPage Activity -->
-    <activity
-        android:name=".SigninPage"
-        android:exported="true" />
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:windowSoftInputMode="adjustResize" />
 
-    <!-- MainActivity -->
-    <activity
-        android:name=".MainActivity"
-        android:exported="true" />
-</application>
+        <activity
+            android:name=".activities.MainActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".activities.UsersActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".activities.ChatActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".call.CallActivity"
+            android:theme="@style/Theme.ChatNova.Call"
+            android:supportsPictureInPicture="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"
+            android:showWhenLocked="true" />
+
+        <service
+            android:name=".firebase.MessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".call.CallService"
+            android:foregroundServiceType="microphone|camera"
+            android:exported="false" />
+
+        <receiver
+            android:name=".firebase.NotificationReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.chatnova.ACTION_REPLY" />
+                <action android:name="com.chatnova.ACTION_DECLINE_CALL" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
 </manifest>
-

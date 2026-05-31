@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/sent_message_background" />
+    <corners
+        android:topLeftRadius="@dimen/_16sdp"
+        android:topRightRadius="@dimen/_16sdp"
+        android:bottomLeftRadius="@dimen/_16sdp"
+        android:bottomRightRadius="@dimen/_4sdp" />
+    <padding
+        android:left="@dimen/_12sdp"
+        android:top="@dimen/_8sdp"
+        android:right="@dimen/_12sdp"
+        android:bottom="@dimen/_8sdp" />
+</shape>
