@@ -1,28 +1,29 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    id("com.google.gms.google-services")
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
-    namespace = "com.chatnova"
+    namespace = "com.example.universitymap"
     compileSdk = 34
-    buildToolsVersion = "34.0.0"
 
     defaultConfig {
-        applicationId = "com.chatnova"
-        minSdk = 26
+        applicationId = "com.example.universitymap"
+        minSdk = 29
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-        multiDexEnabled = true
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -39,21 +40,13 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.sdp.android)
-    implementation(libs.ssp.android)
-    implementation(libs.roundedimageview)
-    implementation(libs.firebase.messaging)
+    implementation(libs.navigation.fragment)
+    implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
-    implementation(libs.multidex)
-    implementation(libs.retrofit)
-    implementation(libs.converter.scalars)
-    implementation("io.github.webrtc-sdk:android:114.5735.02")
-
-    implementation(libs.kotlin.stdlib)
-    implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.kotlinx.coroutines.play.services)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-
+    implementation(libs.firebase.storage)
+    implementation(libs.play.services.maps)
+    implementation(libs.play.services.auth)
+    implementation(libs.play.services.location)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

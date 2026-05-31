@@ -1,93 +1,93 @@
-# ChatNova - Android App
 
-ChatNova is an advanced Android application designed to provide seamless and efficient communication. It leverages modern technologies to offer a robust and user-friendly messaging experience.
+# 🌍 **UniversityMap (MapMate)**  
+An Android application built in Java to help users navigate easily within the university.  
 
-## Features
+---
 
-- **Instant Messaging:** Real-time text messaging with friends and family.
-- **Multimedia Sharing:** Share photos, videos, and other multimedia files.
-- **User Authentication:** Secure login and registration using Firebase Authentication.
-- **Push Notifications:** Stay updated with instant notifications for new messages.
-- **Group Chats:** Create and manage group conversations.
-- **Profile Customization:** Personalize your profile with custom avatars and status updates.
-- **End-to-End Encryption:** Secure your conversations with end-to-end encryption.
+## ✨ **Features**  
 
-## Tech Stack
+- 📍 **University Navigation:** Effortlessly locate and navigate through the university premises.  
+- 🗺️ **Interactive Map:** Displays key areas of the university.  
+- 🔒 **Secure Coordinates Access:** Uses secure secrets to manage sensitive information like university coordinates.  
 
-- **Android SDK:** Application development
-- **Java/Kotlin:** Core programming languages
-- **Firebase Authentication:** User authentication and management
-- **Firebase Firestore:** Real-time database for storing and syncing data
-- **Firebase Cloud Messaging (FCM):** Push notifications
-- **Glide:** Image loading and caching
-- **Material Design:** UI components and design guidelines
+---
 
-## Screenshots
+## 📥 **APK Download**  
 
-Here are some screenshots of the ChatNova app:
+👉 You can download the APK file for this project here:  
+[**Download MapMate APK**](https://github.com/srihari-976/UniversityMap/blob/main/app/build/outputs/apk/androidTest/debug/MapMate.apk)
 
-### Home Screen
-![Home Screen](screenshots/home_screen.png)
+---
 
-### Chat Screen
-![Chat Screen](screenshots/chat_screen.png)
+## 🔑 **Accessing Secrets**  
 
-### Profile Screen
-![Profile Screen](screenshots/sign_up.png)
+The app fetches university coordinates securely using GitHub Codespaces secrets.  
 
-## Getting Started
+### 🔧 **Code Snippet to Access Secrets**  
 
-### Prerequisites
+#### 🖥️ _In Java_  
+```java
+import android.os.Bundle;
+import android.util.Log;
+import androidx.appcompat.app.AppCompatActivity;
 
-- Android Studio installed on your development machine
-- A Firebase project set up with Authentication, Firestore, and FCM
+public class MainActivity extends AppCompatActivity {
 
-### Installation
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/srihari-976/ChatNova---AndriodApp.git
-    cd ChatNova---AndriodApp
-    ```
+        // Fetch university coordinates from environment variables
+        String universityCoordinates = System.getenv("CO_ORDINATES__OF__UNIVERSITY__FOR__MAP__FRAGMENT");
+        if (universityCoordinates != null) {
+            Log.d("UniversityMap", "Coordinates: " + universityCoordinates);
+        } else {
+            Log.d("UniversityMap", "Coordinates not found!");
+        }
+    }
+}
+```
 
-2. Open the project in Android Studio.
+---
 
-3. Set up Firebase:
-    - Add your `google-services.json` file to the `app` directory.
-    - Configure Firebase Authentication, Firestore, and FCM in the Firebase console.
+### 📋 **Steps to Add and Access Secrets**  
 
-4. Build and run the project on your emulator or physical device.
+1. **Add Secrets:**  
+   - Navigate to your repository on **GitHub**.  
+   - Go to **Settings** > **Secrets and variables** > **Codespaces**.  
+   - Click **New secret** and add a secret:  
+     - Name: `CO_ORDINATES__OF__UNIVERSITY__FOR__MAP__FRAGMENT`  
+     - Value: *Your university's coordinates.*  
 
-### APK Download
+2. **Access Secrets in Codespaces:**  
+   - Open a Codespace for your repository.  
+   - The secret will be available as an environment variable. Verify it with:  
+     ```bash
+     echo $CO_ORDINATES__OF__UNIVERSITY__FOR__MAP__FRAGMENT
+     ```
 
-You can download the built APK file from the [app/build](https://github.com/srihari-976/ChatNova---AndriodApp/tree/main/app/build) directory.
+3. **Integrate Secrets in Your Code:**  
+   - Use the Java snippet above to securely access the coordinates.
 
-## Usage
+---
 
-1. **Sign Up/Log In:**
-    - Register a new account or log in with your existing credentials.
+## 🛠️ **How to Build and Run**  
 
-2. **Start Chatting:**
-    - Begin a new conversation by selecting a contact or creating a new group chat.
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/srihari-976/UniversityMap.git
+   ```
+2. Open the project in **Android Studio**.  
+3. Build and run the app on an Android device or emulator.
 
-3. **Send Messages:**
-    - Send text messages, photos, videos, and other multimedia files.
+---
 
-4. **Receive Notifications:**
-    - Get notified instantly when you receive new messages.
+## 🤝 **Contributions**  
 
-## Contributing
+🎉 Contributions are always welcome! Feel free to:  
+- Fork the repository  
+- Submit pull requests  
+- Share your suggestions and improvements!  
 
-We welcome contributions to enhance ChatNova! To contribute, follow these steps:
-
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/YourFeatureName`
-3. Make your changes and commit them: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature/YourFeatureName`
-5. Open a pull request.
-
-## Contact
-
-For questions, feedback, or suggestions, please contact:
-
-- Srihari ([GitHub Profile](https://github.com/srihari-976))
+---

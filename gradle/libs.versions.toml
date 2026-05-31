@@ -1,38 +1,25 @@
 [versions]
-agp = "8.4.1"
+agp = "8.5.2"
 junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
-appcompat = "1.6.1"
-material = "1.11.0"
-activity = "1.8.2"
-constraintlayout = "2.1.4"
-sdpAndroid = "1.1.1"
-sspAndroid = "1.1.1"
-roundedimageview = "2.3.0"
-comGoogleGmsGoogleServicesGradlePlugin = "4.4.1"
-googleServices = "4.4.1"
-firebaseDatabase = "20.3.1"
-firebaseMessaging = "23.4.1"
-firebaseFirestore = "24.11.1"
-multidex = "2.0.1"
-firebaseMessagingVersion = "22.0.0"
-media3Decoder = "1.3.1"
-firebaseCrashlyticsBuildtools = "2.9.9"
-firebaseFirestoreVersion = "24.0.0"
-firebaseAuth = "21.0.1"
-materialVersion = "1.4.0"
-firebaseAuthVersion = "22.1.1"
-playServicesAuth = "20.1.0"
-retrofit = "2.9.0"
-converterScalars = "2.9.0"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.9.3"
+constraintlayout = "2.2.0"
+navigationFragment = "2.8.4"
 googleGmsGoogleServices = "4.4.2"
-googleMaterial = "1.2.0-alpha02"
-navigationFragmentKtx = "2.2.0-rc03"
-navigationUiKtx = "2.2.0-rc03"
-kotlin = "1.9.20"
-kotlinxCoroutines = "1.7.3"
-lifecycleRuntimeKtx = "2.6.2"
+firebaseAuth = "23.1.0"
+firebaseFirestore = "25.1.1"
+firebaseStorage = "21.0.1"
+firebaseDatabase = "21.0.0"
+playServicesMaps = "19.0.0"
+playServicesAuth = "20.0.1"
+googleServices = "4.3.15"
+playServicesAuthVersion = "20.5.0"
+playServicesMapsVersion = "18.1.0"
+playServicesLocation = "21.0.1"
+firebaseFirestoreVersion = "24.7.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -42,35 +29,22 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-sdp-android = { group = "com.intuit.sdp", name = "sdp-android", version.ref = "sdpAndroid" }
-ssp-android = { group = "com.intuit.ssp", name = "ssp-android", version.ref = "sspAndroid" }
-roundedimageview = { group = "com.makeramen", name = "roundedimageview", version.ref = "roundedimageview" }
-com-google-gms-google-services-gradle-plugin = { group = "com.google.gms.google-services", name = "com.google.gms.google-services.gradle.plugin", version.ref = "comGoogleGmsGoogleServicesGradlePlugin" }
-google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServices" }
-firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
-firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
-multidex = { group = "androidx.multidex", name = "multidex", version.ref = "multidex" }
-google-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessagingVersion" }
-media3-decoder = { group = "androidx.media3", name = "media3-decoder", version.ref = "media3Decoder" }
-firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
-google-firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestoreVersion" }
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
-google-material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
-google-firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuthVersion" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-converter-scalars = { group = "com.squareup.retrofit2", name = "converter-scalars", version.ref = "converterScalars" }
-com-google-android-material-material = { group = "com.google.android.material", name = "material", version.ref = "googleMaterial" }
-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
-kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
-kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
-kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "kotlinxCoroutines" }
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServices" }
+#noinspection SimilarGradleDependency
+gms-play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuthVersion" }
+#noinspection SimilarGradleDependency
+gms-play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMapsVersion" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+google-firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestoreVersion" }
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
-googleGmsGoogleServices = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 
